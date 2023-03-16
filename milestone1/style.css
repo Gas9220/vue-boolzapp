@@ -21,8 +21,15 @@ body {
 
 /* || Debug */
 .debug .container {
-    height: 70%;
     background-color: rebeccapurple;
+}
+
+.debug .left-side {
+    background-color: lightblue;
+}
+
+.debug .right-side {
+    background-color: lightcoral;
 }
 
 /* || Main container */
@@ -30,8 +37,29 @@ body {
     position: absolute;
     width: 70%;
     max-width: 68.75rem;
+    height: 70%;
     top: 50%;
     left: 50%;
     border-radius: 1rem;
     transform: translateX(-50%) translateY(-50%);
+}
+
+.left-side {
+    width: 40%;
+}
+
+.right-side {
+    flex-grow: 1;
+}
+
+/* || Utils */
+
+.d-flex {
+    display: flex;
+}
+
+@media screen and (min-width: 800px) {
+    .left-side {
+        width: 30%;
+    }
 }
