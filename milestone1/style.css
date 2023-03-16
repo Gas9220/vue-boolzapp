@@ -49,7 +49,7 @@ body {
 }
 
 .left-side {
-    width: 45%;
+    width: 50%;
 }
 
 .right-side {
@@ -102,6 +102,35 @@ body {
 
 .notifications div a {
     color: gray;
+}
+
+.search input {
+    margin-top: 10px;
+    margin-bottom: .625rem;
+}
+
+.search {
+    background-color: lightgray;
+}
+
+.search div {
+    margin-right: 4px;
+    margin-left: .25rem;
+}
+
+.search input {
+    background-color: white;
+    border: none;
+    height: 1.875rem;
+    flex-grow: 1;
+
+}
+
+.search i {
+    color: gray;
+    background-color: white;
+    height: 1.875rem;
+    padding: .3125rem;
 }
 
 /* || Utils */
