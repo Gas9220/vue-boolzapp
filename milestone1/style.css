@@ -32,6 +32,10 @@ body {
     background-color: lightcoral;
 }
 
+.debug .header {
+    background-color: lightpink;
+}
+
 /* || Main container */
 .container {
     position: absolute;
@@ -50,6 +54,14 @@ body {
 
 .right-side {
     flex-grow: 1;
+}
+
+.right-side .header {
+    border-left: .0625rem solid lightgray;
+}
+
+.header {
+    height: 4.375rem;
 }
 
 /* || Utils */
