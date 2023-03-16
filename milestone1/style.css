@@ -80,6 +80,30 @@ body {
     color: gray;
 }
 
+.notifications {
+    padding: .3125rem;
+    background-color: lightblue;
+    height: 4.0625rem;
+}
+
+.notifications i {
+    color: lightblue;
+    background-color: white;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    vertical-align: middle;
+    margin-right: .3rem;
+    padding: .5rem;
+}
+
+.notifications div small {
+    display: block;
+}
+
+.notifications div a {
+    color: gray;
+}
+
 /* || Utils */
 
 .d-flex {
