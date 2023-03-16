@@ -4,4 +4,10 @@
     margin: 0;
     padding: 0;
 }
+
 /* ---------- /Reset ----------------- */
+
+body {
+    background: linear-gradient(to bottom, #009688 20%, #dadbd4 15%);
+    height: 100vh;
+}
