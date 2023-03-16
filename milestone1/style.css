@@ -49,7 +49,7 @@ body {
 }
 
 .left-side {
-    width: 40%;
+    width: 45%;
 }
 
 .right-side {
@@ -62,6 +62,17 @@ body {
 
 .header {
     height: 3.75rem;
+    justify-content: space-between;
+    background-color: lightgray;
+}
+
+.header i {
+    color: gray;
+    padding: .4rem;
+}
+
+.header i:last-child {
+    margin-right: .3125rem;
 }
 
 /* || Utils */
@@ -70,8 +81,26 @@ body {
     display: flex;
 }
 
+.circle-img {
+    border-radius: 50%;
+    height: 2.5rem;
+    width: 2.5rem;
+}
+
+.v-align.center {
+    vertical-align: center;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.header div img.circle-img {
+    margin: 0 .4375rem 0 .4375rem;
+}
+
 @media screen and (min-width: 800px) {
     .left-side {
-        width: 30%;
+        width: 35%;
     }
 }
