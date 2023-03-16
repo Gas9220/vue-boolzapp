@@ -18,7 +18,8 @@
 </head>
 
 <body class="">
-    <!-- Main Container -->
+    <div id="app">
+            <!-- Main Container -->
     <div class="container d-flex">
         <!-- Left Col -->
         <div class="left-side">
@@ -48,111 +49,11 @@
                     </div>
                 </div>
                 <ul class="contacts">
-                    <li>
+                    <li v-for="contact in contacts">
                         <div class="d-flex">
                             <img src="img/avatar_1.jpg" alt="avatar" class="circle-img">
                             <div>
-                                <div>Sofia</div>
-                                <small>Ultimo messaggio inviato</small>
-                            </div>
-                            <small class="last-message">12:00</small>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="d-flex">
-                            <img src="img/avatar_1.jpg" alt="avatar" class="circle-img">
-                            <div>
-                                <div>Sofia</div>
-                                <small>Ultimo messaggio inviato</small>
-                            </div>
-                            <small class="last-message">12:00</small>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="d-flex">
-                            <img src="img/avatar_1.jpg" alt="avatar" class="circle-img">
-                            <div>
-                                <div>Sofia</div>
-                                <small>Ultimo messaggio inviato</small>
-                            </div>
-                            <small class="last-message">12:00</small>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="d-flex">
-                            <img src="img/avatar_1.jpg" alt="avatar" class="circle-img">
-                            <div>
-                                <div>Sofia</div>
-                                <small>Ultimo messaggio inviato</small>
-                            </div>
-                            <small class="last-message">12:00</small>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="d-flex">
-                            <img src="img/avatar_1.jpg" alt="avatar" class="circle-img">
-                            <div>
-                                <div>Sofia</div>
-                                <small>Ultimo messaggio inviato</small>
-                            </div>
-                            <small class="last-message">12:00</small>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="d-flex">
-                            <img src="img/avatar_1.jpg" alt="avatar" class="circle-img">
-                            <div>
-                                <div>Sofia</div>
-                                <small>Ultimo messaggio inviato</small>
-                            </div>
-                            <small class="last-message">12:00</small>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="d-flex">
-                            <img src="img/avatar_1.jpg" alt="avatar" class="circle-img">
-                            <div>
-                                <div>Sofia</div>
-                                <small>Ultimo messaggio inviato</small>
-                            </div>
-                            <small class="last-message">12:00</small>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="d-flex">
-                            <img src="img/avatar_1.jpg" alt="avatar" class="circle-img">
-                            <div>
-                                <div>Sofia</div>
-                                <small>Ultimo messaggio inviato</small>
-                            </div>
-                            <small class="last-message">12:00</small>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="d-flex">
-                            <img src="img/avatar_1.jpg" alt="avatar" class="circle-img">
-                            <div>
-                                <div>Sofia</div>
-                                <small>Ultimo messaggio inviato</small>
-                            </div>
-                            <small class="last-message">12:00</small>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="d-flex">
-                            <img src="img/avatar_1.jpg" alt="avatar" class="circle-img">
-                            <div>
-                                <div>Sofia</div>
-                                <small>Ultimo messaggio inviato</small>
-                            </div>
-                            <small class="last-message">12:00</small>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="d-flex">
-                            <img src="img/avatar_1.jpg" alt="avatar" class="circle-img">
-                            <div>
-                                <div>Sofia</div>
+                                <div>{{ contact.name }}</div>
                                 <small>Ultimo messaggio inviato</small>
                             </div>
                             <small class="last-message">12:00</small>
@@ -228,6 +129,12 @@
 
     </div>
     <!-- /Main Container -->
+</div>
+
+    <!-- Script -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="main.js"></script>
+    <!-- /Script -->
 
 </body>
 
