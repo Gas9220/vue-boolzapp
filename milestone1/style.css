@@ -1,18 +1,37 @@
-/* ----------- Reset ----------------- */
+/* || Reset */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/* ---------- /Reset ----------------- */
+/* || Variables */
 
 :root {
     --backgroundColor1: #009688;
     --backgroundColor2: #dadbd4;
 }
 
+/* || General styles */
+
 body {
     background: linear-gradient(to bottom, var(--backgroundColor1) 20%, var(--backgroundColor2) 15%);
     height: 100vh;
+}
+
+/* || Debug */
+.debug .container {
+    height: 70%;
+    background-color: rebeccapurple;
+}
+
+/* || Main container */
+.container {
+    position: absolute;
+    width: 70%;
+    max-width: 68.75rem;
+    top: 50%;
+    left: 50%;
+    border-radius: 1rem;
+    transform: translateX(-50%) translateY(-50%);
 }
