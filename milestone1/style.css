@@ -75,6 +75,11 @@ body {
     margin-right: .3125rem;
 }
 
+.last-access {
+    font-size: .625rem;
+    color: gray;
+}
+
 /* || Utils */
 
 .d-flex {
