@@ -19,6 +19,14 @@ body {
     height: 100vh;
 }
 
+ul {
+    list-style: none;
+}
+
+i {
+    cursor: pointer;
+}
+
 /* || Debug */
 .debug .container {
     background-color: rebeccapurple;
@@ -133,6 +141,27 @@ body {
     padding: .3125rem;
 }
 
+.header div img.circle-img {
+    margin: 0 .4375rem 0 .4375rem;
+}
+
+.last-message {
+    margin-left: auto;
+}
+
+ul.contacts li {
+    padding: .7rem .3125rem;
+    background-color: white;
+}
+
+ul.contacts {
+    overflow-y:scroll;
+}
+
+aside {
+    height: calc(100% - 3.75rem);
+}
+
 /* || Utils */
 
 .d-flex {
@@ -153,12 +182,12 @@ body {
     align-items: center;
 }
 
-.header div img.circle-img {
-    margin: 0 .4375rem 0 .4375rem;
+.flex-col {
+    flex-direction: column;
 }
 
 @media screen and (min-width: 800px) {
     .left-side {
-        width: 35%;
+        width: 40%;
     }
 }
