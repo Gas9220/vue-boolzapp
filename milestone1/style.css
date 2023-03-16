@@ -7,7 +7,12 @@
 
 /* ---------- /Reset ----------------- */
 
+:root {
+    --backgroundColor1: #009688;
+    --backgroundColor2: #dadbd4;
+}
+
 body {
-    background: linear-gradient(to bottom, #009688 20%, #dadbd4 15%);
+    background: linear-gradient(to bottom, var(--backgroundColor1) 20%, var(--backgroundColor2) 15%);
     height: 100vh;
 }
