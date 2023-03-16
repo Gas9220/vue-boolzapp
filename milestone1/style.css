@@ -44,6 +44,10 @@ i {
     background-color: lightpink;
 }
 
+.debug .bottom-bar {
+    background-color: lightyellow;
+}
+
 /* || Main container */
 .container {
     position: absolute;
@@ -160,6 +164,28 @@ ul.contacts {
 
 aside {
     height: calc(100% - 3.75rem);
+}
+
+.bottom-bar {
+    padding: .625rem;
+}
+
+.bottom-bar {
+    padding: .625rem;
+}
+
+.messages-area {
+    flex-grow: 1;
+}
+
+.bottom-bar input {
+    flex-grow: 1;
+    margin-left: 10px;
+    margin-right: .625rem;
+}
+
+.bottom-bar i {
+    color: gray;
 }
 
 /* || Utils */
