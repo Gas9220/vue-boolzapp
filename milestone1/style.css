@@ -70,6 +70,7 @@ i {
 
 .right-side .header {
     border-left: .0625rem solid lightgray;
+    padding: .3125rem;
 }
 
 .header {
