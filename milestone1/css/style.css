@@ -1,3 +1,5 @@
+@import url('utils.css');
+
 /* || Reset */
 * {
     box-sizing: border-box;
@@ -62,10 +64,7 @@ i {
 
 .left-side {
     width: 50%;
-}
-
-.right-side {
-    flex-grow: 1;
+    background-color: white;
 }
 
 .right-side .header {
@@ -135,7 +134,6 @@ i {
     background-color: white;
     border: none;
     height: 1.875rem;
-    flex-grow: 1;
 }
 
 .search i {
@@ -170,7 +168,7 @@ aside {
     height: calc(100% - 3.75rem);
 }
 
-.bottom-bar > *{
+.bottom-bar > * {
     padding: .3125rem;
 }
 
@@ -180,10 +178,9 @@ aside {
 }
 
 .messages-area {
-    flex-grow: 1;
-    background-image: url('img/mine.jpg');
-    
-    overflow-y: scroll;
+    background-image: url('../img/mine.jpg'); 
+    width: 100%;
+    overflow-y: auto;
 }
 
 .message {
@@ -205,7 +202,6 @@ aside {
 }
 
 .bottom-bar input {
-    flex-grow: 1;
     margin-left: 10px;
     margin-right: .625rem;
 }
@@ -220,30 +216,6 @@ aside {
     position: absolute;
     right: .3125rem;
     bottom: .3125rem;
-}
-
-/* || Utils */
-
-.d-flex {
-    display: flex;
-}
-
-.circle-img {
-    border-radius: 50%;
-    height: 2.5rem;
-    width: 2.5rem;
-}
-
-.v-align.center {
-    vertical-align: center;
-}
-
-.align-center {
-    align-items: center;
-}
-
-.flex-col {
-    flex-direction: column;
 }
 
 @media screen and (min-width: 800px) {
