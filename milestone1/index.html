@@ -12,61 +12,63 @@
     <!-- /CSS -->
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- /Font Awesome -->
 
 </head>
 
 <body class="">
     <div id="app">
-            <!-- Main Container -->
-    <div class="container d-flex">
-        <!-- Left Col -->
-        <div class="left-side">
-            <div class="header d-flex">
-                <div class="d-flex align-center">
-                    <img src="img/avatar_1.jpg" alt="avatar" class="circle-img">
-                    <div>Sofia</div>
-                </div>
-                <div class="d-flex align-center">
-                    <i class="fa-solid fa-circle-notch"></i>
-                    <i class="fa-solid fa-message"></i>
-                    <i class="fa-solid fa-ellipsis-vertical"></i>
-                </div>
-            </div>
-            <aside class="d-flex flex-col">
-                <div class="notifications d-flex align-center">
-                    <i class="fa-solid fa-bell-slash"></i>
-                    <div>
-                        <small>Ricevi notifiche di nuovi messaggi</small>
-                        <a href=""><small>Attiva notifiche desktop</small></a>
-                    </div>
-                </div>
-                <div class="search">
+        <!-- Main Container -->
+        <div class="container d-flex">
+            <!-- Left Col -->
+            <div class="left-side">
+                <div class="header d-flex">
                     <div class="d-flex align-center">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+                        <img src="img/avatar_1.jpg" alt="avatar" class="circle-img">
+                        <div>Sofia</div>
+                    </div>
+                    <div class="d-flex align-center">
+                        <i class="fa-solid fa-circle-notch"></i>
+                        <i class="fa-solid fa-message"></i>
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
                     </div>
                 </div>
-                <ul class="contacts">
-                    <li v-for="contact in contacts">
-                        <div class="d-flex">
-                            <img src="img/avatar_1.jpg" alt="avatar" class="circle-img">
-                            <div>
-                                <div>{{ contact.name }}</div>
-                                <small>Ultimo messaggio inviato</small>
-                            </div>
-                            <small class="last-message">12:00</small>
+                <aside class="d-flex flex-col">
+                    <div class="notifications d-flex align-center">
+                        <i class="fa-solid fa-bell-slash"></i>
+                        <div>
+                            <small>Ricevi notifiche di nuovi messaggi</small>
+                            <a href=""><small>Attiva notifiche desktop</small></a>
                         </div>
-                    </li>
-                </ul>
-            </aside>
-        </div>
-        <!-- /Left Col -->
+                    </div>
+                    <div class="search">
+                        <div class="d-flex align-center">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" placeholder="Cerca o inizia una nuova chat">
+                        </div>
+                    </div>
+                    <ul class="contacts">
+                        <li v-for="contact in contacts">
+                            <div class="d-flex">
+                                <img src="img/avatar_1.jpg" alt="avatar" class="circle-img">
+                                <div>
+                                    <div>{{ contact.name }}</div>
+                                    <small>Ultimo messaggio inviato</small>
+                                </div>
+                                <small class="last-message">12:00</small>
+                            </div>
+                        </li>
+                    </ul>
+                </aside>
+            </div>
+            <!-- /Left Col -->
 
-        <!-- Right Col -->
-        <div class="right-side d-flex flex-col">
-            <div class="header d-flex">
+            <!-- Right Col -->
+            <div class="right-side d-flex flex-col">
+                <div class="header d-flex">
                     <div class="d-flex align-center">
                         <img src="img/avatar_1.jpg" alt="avatar" class="circle-img">
                         <div>
@@ -80,56 +82,56 @@
                         <i class="fa-solid fa-paperclip"></i>
                         <i class="fa-solid fa-ellipsis-vertical"></i>
                     </div>
+                </div>
+                <div class="messages-area d-flex flex-col">
+                    <div class="message message-rec">
+                        Hai portato a spasso il cane?
+                        <small class="time">15:30</small>
+                    </div>
+                    <div class="message message-rec">
+                        Ricordati di stendere i panni
+                        <small class="time">15:30</small>
+                    </div>
+                    <div class="message message-send">
+                        Tutto fatto!
+                        <small class="time">15:30</small>
+                    </div>
+                    <div class="message message-rec">
+                        Hai portato a spasso il cane?
+                        <small class="time">15:30</small>
+                    </div>
+                    <div class="message message-rec">
+                        Ricordati di stendere i panni
+                        <small class="time">15:30</small>
+                    </div>
+                    <div class="message message-send">
+                        Tutto fatto!
+                        <small class="time">15:30</small>
+                    </div>
+                    <div class="message message-rec">
+                        Hai portato a spasso il cane?
+                        <small class="time">15:30</small>
+                    </div>
+                    <div class="message message-rec">
+                        Ricordati di stendere i panni
+                        <small class="time">15:30</small>
+                    </div>
+                    <div class="message message-send">
+                        Tutto fatto!
+                        <small class="time">15:30</small>
+                    </div>
+                </div>
+                <div class="bottom-bar d-flex">
+                    <i class="fa-regular fa-face-smile"></i>
+                    <input type="text" placeholder="Scrivi un messaggio">
+                    <i class="fa-solid fa-microphone"></i>
+                </div>
             </div>
-            <div class="messages-area d-flex flex-col">
-                <div class="message-rec">
-                    Hai portato a spasso il cane?
-                    <small class="time">15:30</small>
-                </div>
-                <div class="message message-rec">
-                    Ricordati di stendere i panni
-                    <small class="time">15:30</small>
-                </div>
-                <div class="message message-send">
-                    Tutto fatto!
-                    <small class="time">15:30</small>
-                </div>
-                <div class="message message-rec">
-                    Hai portato a spasso il cane?
-                    <small class="time">15:30</small>
-                </div>
-                <div class="message message-rec">
-                    Ricordati di stendere i panni
-                    <small class="time">15:30</small>
-                </div>
-                <div class="message message-send">
-                    Tutto fatto!
-                    <small class="time">15:30</small>
-                </div>
-                <div class="message message-rec">
-                    Hai portato a spasso il cane?
-                    <small class="time">15:30</small>
-                </div>
-                <div class="message message-rec">
-                    Ricordati di stendere i panni
-                    <small class="time">15:30</small>
-                </div>
-                <div class="message message-send">
-                    Tutto fatto!
-                    <small class="time">15:30</small>
-                </div>
-            </div>
-            <div class="bottom-bar d-flex">
-                <i class="fa-regular fa-face-smile"></i>
-                <input type="text" placeholder="Scrivi un messaggio">
-                <i class="fa-solid fa-microphone"></i>
-            </div>
-        </div>
-        <!-- Right Col -->
+            <!-- Right Col -->
 
+        </div>
+        <!-- /Main Container -->
     </div>
-    <!-- /Main Container -->
-</div>
 
     <!-- Script -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
