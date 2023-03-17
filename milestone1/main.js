@@ -167,5 +167,14 @@ createApp({
                 }
             ]
         }
+    },
+    methods: {
+        isMessageReceived(index) {
+            if (this.contacts[0].messages[index].status === 'received') {
+                return 'message-rec'
+            }
+
+            return 'message-send'
+        }
     }
 }).mount('#app')

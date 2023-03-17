@@ -191,12 +191,12 @@ aside {
     border-radius: .625rem;
 }
 
-.message-rec {
+.message-send {
     background-color: #d6f8bc;
     align-self: flex-end;
 }
 
-.message-send {
+.message-rec {
     background-color: white;
     align-self: flex-start;
 }
