@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boolzapp</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- /CSS -->
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- /Font Awesome -->
+
+</head>
+
+<body class="">
+    <div id="app">
+        <!-- Main Container -->
+        <div class="container d-flex">
+            <!-- Left Col -->
+            <div class="left-side">
+                <div class="header d-flex">
+                    <div class="d-flex align-center">
+                        <img src="img/avatar_1.jpg" alt="avatar" class="circle-img">
+                        <div>Sofia</div>
+                    </div>
+                    <div class="d-flex align-center">
+                        <i class="fa-solid fa-circle-notch"></i>
+                        <i class="fa-solid fa-message"></i>
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </div>
+                </div>
+                <aside class="d-flex flex-col">
+                    <div class="notifications d-flex align-center">
+                        <i class="fa-solid fa-bell-slash"></i>
+                        <div>
+                            <small>Ricevi notifiche di nuovi messaggi</small>
+                            <a href=""><small>Attiva notifiche desktop</small></a>
+                        </div>
+                    </div>
+                    <div class="search">
+                        <div class="d-flex align-center">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" placeholder="Cerca o inizia una nuova chat" class="f-grow1" v-on:keyup="filteredContacts" v-model="searchText">
+                        </div>
+                    </div>
+                    <ul class="contacts">
+                        <li v-for="(contact, index) in filteredContacts()" @click="getContactMessages(index)" :class="{ selected: contact === filteredContacts()[selectedUser] }">
+                            <div class="d-flex">
+                                <img :src="contact.avatar" alt="avatar" class="circle-img">
+                                <div>
+                                    <div>{{ contact.name }}</div>
+                                    <small>Ultimo messaggio inviato</small>
+                                </div>
+                                <small class="last-message">12:00</small>
+                            </div>
+                        </li>
+                    </ul>
+                </aside>
+            </div>
+            <!-- /Left Col -->
+
+            <!-- Right Col -->
+            <div class="right-side d-flex flex-col f-grow1">
+                <div class="header d-flex">
+                    <div class="d-flex align-center">
+                        <img :src="filteredContacts()[selectedUser].avatar" alt="avatar" class="circle-img">
+                        <div>
+                            <div>{{ filteredContacts()[selectedUser].name }}</div>
+                            <span class="last-access">Ultimo accesso oggi alle 12:00</span>
+                        </div>
+                    </div>
+
+                    <div class="d-flex align-center">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <i class="fa-solid fa-paperclip"></i>
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </div>
+                </div>
+                <div class="messages-area d-flex flex-col f-grow1">
+                    <div class="message" :class="isMessageReceived(index)" v-for="(messageInfo, index) in filteredContacts()[selectedUser].messages">
+                        {{ messageInfo.message }}
+                        <small class="time">15:30</small>
+                    </div>
+                </div>
+                <div class="bottom-bar d-flex">
+                    <i class="fa-regular fa-face-smile"></i>
+                    <input type="text" placeholder="Scrivi un messaggio" class="f-grow1" v-model="messageText" v-on:keyup.enter="sendNewMessage()">
+                    <i class="fa-solid fa-microphone"></i>
+                </div>
+            </div>
+            <!-- Right Col -->
+
+        </div>
+        <!-- /Main Container -->
+    </div>
+
+    <!-- Script -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="main.js"></script>
+    <!-- /Script -->
+
+</body>
+
+</html>
