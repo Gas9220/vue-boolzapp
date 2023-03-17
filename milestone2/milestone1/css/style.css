@@ -1,0 +1,229 @@
+@import url('utils.css');
+
+/* || Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* || Variables */
+
+:root {
+    --backgroundColor1: #009688;
+    --backgroundColor2: #dadbd4;
+}
+
+/* || General styles */
+
+body {
+    background: linear-gradient(to bottom, var(--backgroundColor1) 20%, var(--backgroundColor2) 15%);
+    height: 100vh;
+}
+
+ul {
+    list-style: none;
+}
+
+i {
+    cursor: pointer;
+}
+
+/* || Debug */
+.debug .container {
+    background-color: rebeccapurple;
+}
+
+.debug .left-side {
+    background-color: lightblue;
+}
+
+.debug .right-side {
+    background-color: lightcoral;
+}
+
+.debug .header {
+    background-color: lightpink;
+}
+
+.debug .bottom-bar {
+    background-color: lightyellow;
+}
+
+/* || Main container */
+.container {
+    position: absolute;
+    width: 70%;
+    max-width: 68.75rem;
+    height: 80%;
+    top: 50%;
+    left: 50%;
+    border-radius: 1rem;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.left-side {
+    width: 50%;
+    background-color: white;
+}
+
+.right-side .header {
+    border-left: .0625rem solid lightgray;
+    padding: .625rem;
+}
+
+.header {
+    height: 3.75rem;
+    justify-content: space-between;
+    background-color: lightgray;
+}
+
+.header i {
+    color: gray;
+    padding: .4rem;
+}
+
+.header i:last-child {
+    margin-right: .3125rem;
+}
+
+.last-access {
+    font-size: .625rem;
+    color: gray;
+}
+
+.notifications {
+    padding: .3125rem;
+    background-color: lightblue;
+    height: 4.0625rem;
+}
+
+.notifications i {
+    color: lightblue;
+    background-color: white;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    vertical-align: middle;
+    margin-right: .3rem;
+    padding: .5rem;
+}
+
+.notifications div small {
+    display: block;
+}
+
+.notifications div a {
+    color: gray;
+}
+
+.search input {
+    margin-top: .625rem;
+    margin-bottom: .625rem;
+}
+
+.search {
+    background-color: lightgray;
+}
+
+.search div {
+    margin-right: 4px;
+    margin-left: .25rem;
+}
+
+.search input {
+    background-color: white;
+    border: none;
+    height: 1.875rem;
+}
+
+.search i {
+    color: gray;
+    background-color: white;
+    height: 1.875rem;
+    padding: .3125rem;
+}
+
+.header div img.circle-img {
+    margin: 0 .4375rem 0 .4375rem;
+}
+
+.last-message {
+    margin-left: auto;
+}
+
+ul.contacts li {
+    padding: .7rem .3125rem;
+    background-color: white;
+}
+
+ul.contacts {
+    overflow-y: auto;
+}
+
+ul.contacts li {
+    cursor: pointer;
+}
+
+aside {
+    height: calc(100% - 3.75rem);
+}
+
+.bottom-bar > * {
+    padding: .3125rem;
+}
+
+.bottom-bar {
+    padding: .625rem;
+    background-color: rgb(211, 202, 192);
+}
+
+.messages-area {
+    background-image: url('../img/mine.jpg'); 
+    width: 100%;
+    overflow-y: auto;
+}
+
+.message {
+    position: relative;
+    padding: 1rem;
+    margin: 1.25rem;
+    width: 50%;
+    border-radius: .625rem;
+}
+
+.message-send {
+    background-color: #d6f8bc;
+    align-self: flex-end;
+}
+
+.message-rec {
+    background-color: white;
+    align-self: flex-start;
+}
+
+.bottom-bar input {
+    margin-left: 10px;
+    margin-right: .625rem;
+}
+
+.bottom-bar i {
+    color: gray;
+}
+
+.time {
+    font-size: .625rem;
+    color: gray;
+    position: absolute;
+    right: .3125rem;
+    bottom: .3125rem;
+}
+
+.selected {
+    background-color: lightgray !important;
+}
+
+@media screen and (min-width: 800px) {
+    .left-side {
+        width: 40%;
+    }
+}
