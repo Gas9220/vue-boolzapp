@@ -51,9 +51,9 @@
                         </div>
                     </div>
                     <ul class="contacts">
-                        <li v-for="contact in contacts">
+                        <li v-for="(contact, index) in contacts" @click="getContactMessages(index)" :class="{ selected: contact === contacts[selectedUser] }">
                             <div class="d-flex">
-                                <img src="img/avatar_1.jpg" alt="avatar" class="circle-img">
+                                <img :src="contact.avatar" alt="avatar" class="circle-img">
                                 <div>
                                     <div>{{ contact.name }}</div>
                                     <small>Ultimo messaggio inviato</small>
@@ -70,9 +70,9 @@
             <div class="right-side d-flex flex-col f-grow1">
                 <div class="header d-flex">
                     <div class="d-flex align-center">
-                        <img src="img/avatar_1.jpg" alt="avatar" class="circle-img">
+                        <img :src="contacts[selectedUser].avatar" alt="avatar" class="circle-img">
                         <div>
-                            <div>Michele</div>
+                            <div>{{ contacts[selectedUser].name }}</div>
                             <span class="last-access">Ultimo accesso oggi alle 12:00</span>
                         </div>
                     </div>
@@ -84,7 +84,7 @@
                     </div>
                 </div>
                 <div class="messages-area d-flex flex-col f-grow1">
-                    <div class="message" :class="isMessageReceived(index)" v-for="(messageInfo, index) in contacts[0].messages">
+                    <div class="message" :class="isMessageReceived(index)" v-for="(messageInfo, index) in contacts[selectedUser].messages">
                         {{ messageInfo.message }}
                         <small class="time">15:30</small>
                     </div>

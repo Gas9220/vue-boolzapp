@@ -218,6 +218,10 @@ aside {
     bottom: .3125rem;
 }
 
+.selected {
+    background-color: lightgray !important;
+}
+
 @media screen and (min-width: 800px) {
     .left-side {
         width: 40%;
