@@ -182,8 +182,10 @@ createApp({
             this.selectedUser = index
         },
         sendNewMessage() {
+            var DateTime = luxon.DateTime;
+
             const newMessage = {
-                date: new Date(),
+                date: "17/03/2023 18:15:15",
                 message: this.messageText,
                 status: 'sent'
             }
@@ -195,7 +197,7 @@ createApp({
         automaticAnswer() {
             setTimeout(() => {
                 const newMessage = {
-                    date: new Date(),
+                    date: "17/03/2023 18:15:17",
                     message: 'Ti ho risposto dopo 3 secondi',
                     status: 'received'
                 }
@@ -223,12 +225,12 @@ createApp({
                     visible: true,
                     messages: [
                         {
-                            date: '10/01/2020 15:51:00',
+                            date: '10/01/2020 15:51:15',
                             message: 'Questo è un messaggio inviato di prova',
                             status: 'sent'
                         },
                         {
-                            date: '10/01/2020 15:51:00',
+                            date: '10/01/2020 15:51:15',
                             message: 'Questo è un messaggio ricevuto di prova',
                             status: 'received'
                         }
