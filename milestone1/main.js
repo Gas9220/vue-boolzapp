@@ -4,6 +4,7 @@ createApp({
     data() {
         return {
             selectedUser: 0,
+            messageText: '',
             contacts: [
                 {
                     name: 'Michele',
@@ -171,13 +172,22 @@ createApp({
     },
     methods: {
         isMessageReceived(index) {
-            if (this.contacts[0].messages[index].status === 'received') {
+            if (this.contacts[this.selectedUser].messages[index].status === 'received') {
                 return 'message-rec'
             }
             return 'message-send'
         },
         getContactMessages(index) {
             this.selectedUser = index
+        },
+        sendNewMessage() {
+            const newMessage = {
+                date: new Date(),
+                message: this.messageText,
+                status: 'sent'
+            }
+            this.contacts[this.selectedUser].messages.push(newMessage)
+            this.messageText = ''
         }
     }
 }).mount('#app')
