@@ -188,6 +188,18 @@ createApp({
             }
             this.contacts[this.selectedUser].messages.push(newMessage)
             this.messageText = ''
+
+            this.automaticAnswer()
+        },
+        automaticAnswer() {
+            setTimeout(() => {
+                const newMessage = {
+                    date: new Date(),
+                    message: 'Ti ho risposto dopo 3 secondi',
+                    status: 'received'
+                }
+                this.contacts[this.selectedUser].messages.push(newMessage)
+            }, 3 * 1000);
         }
     }
 }).mount('#app')
