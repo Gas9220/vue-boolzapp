@@ -1,0 +1,27 @@
+/* || Utils */
+
+.d-flex {
+    display: flex;
+}
+
+.circle-img {
+    border-radius: 50%;
+    height: 2.5rem;
+    width: 2.5rem;
+}
+
+.v-align.center {
+    vertical-align: center;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.f-grow1 {
+    flex-grow: 1;
+}
