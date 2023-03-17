@@ -51,9 +51,9 @@
                         </div>
                     </div>
                     <ul class="contacts">
-                        <li v-for="(contact, index) in contacts" @click="getContactMessages(index)" :class="{ selected: contact === contacts[selectedUser] }">
+                        <li v-for="contact in contacts">
                             <div class="d-flex">
-                                <img :src="contact.avatar" alt="avatar" class="circle-img">
+                                <img src="img/avatar_1.jpg" alt="avatar" class="circle-img">
                                 <div>
                                     <div>{{ contact.name }}</div>
                                     <small>Ultimo messaggio inviato</small>
@@ -70,9 +70,9 @@
             <div class="right-side d-flex flex-col f-grow1">
                 <div class="header d-flex">
                     <div class="d-flex align-center">
-                        <img :src="contacts[selectedUser].avatar" alt="avatar" class="circle-img">
+                        <img src="img/avatar_1.jpg" alt="avatar" class="circle-img">
                         <div>
-                            <div>{{ contacts[selectedUser].name }}</div>
+                            <div>Michele</div>
                             <span class="last-access">Ultimo accesso oggi alle 12:00</span>
                         </div>
                     </div>
@@ -84,14 +84,46 @@
                     </div>
                 </div>
                 <div class="messages-area d-flex flex-col f-grow1">
-                    <div class="message" :class="isMessageReceived(index)" v-for="(messageInfo, index) in contacts[selectedUser].messages">
-                        {{ messageInfo.message }}
+                    <div class="message message-rec">
+                        Hai portato a spasso il cane?
+                        <small class="time">15:30</small>
+                    </div>
+                    <div class="message message-rec">
+                        Ricordati di stendere i panni
+                        <small class="time">15:30</small>
+                    </div>
+                    <div class="message message-send">
+                        Tutto fatto!
+                        <small class="time">15:30</small>
+                    </div>
+                    <div class="message message-rec">
+                        Hai portato a spasso il cane?
+                        <small class="time">15:30</small>
+                    </div>
+                    <div class="message message-rec">
+                        Ricordati di stendere i panni
+                        <small class="time">15:30</small>
+                    </div>
+                    <div class="message message-send">
+                        Tutto fatto!
+                        <small class="time">15:30</small>
+                    </div>
+                    <div class="message message-rec">
+                        Hai portato a spasso il cane?
+                        <small class="time">15:30</small>
+                    </div>
+                    <div class="message message-rec">
+                        Ricordati di stendere i panni
+                        <small class="time">15:30</small>
+                    </div>
+                    <div class="message message-send">
+                        Tutto fatto!
                         <small class="time">15:30</small>
                     </div>
                 </div>
                 <div class="bottom-bar d-flex">
                     <i class="fa-regular fa-face-smile"></i>
-                    <input type="text" placeholder="Scrivi un messaggio" class="f-grow1" v-model="messageText" v-on:keyup.enter="sendNewMessage()">
+                    <input type="text" placeholder="Scrivi un messaggio" class="f-grow1">
                     <i class="fa-solid fa-microphone"></i>
                 </div>
             </div>
