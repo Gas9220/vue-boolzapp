@@ -247,8 +247,16 @@ createApp({
             const minutes = formattedDate.minute
         
             return `${hours}:${minutes}`
-        
             //return formattedDate.toLocaleString(DateTime.TIME_SIMPLE) NON FUNZIONA
+        },
+        checkLastMessage(messages) {
+            const lastMessage = messages[messages.length - 1]
+            console.log(lastMessage)
+            if (lastMessage.status === 'received') {
+                return `Ultimo messaggio ricevuto ${this.getMessageTime(lastMessage.date)}`
+            } 
+
+            return `Ultimo messaggio inviato ${this.getMessageTime(lastMessage.date)}`
         }
     }
 }).mount('#app')
