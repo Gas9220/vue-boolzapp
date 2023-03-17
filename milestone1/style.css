@@ -53,7 +53,7 @@ i {
     position: absolute;
     width: 70%;
     max-width: 68.75rem;
-    height: 70%;
+    height: 80%;
     top: 50%;
     left: 50%;
     border-radius: 1rem;
@@ -70,7 +70,7 @@ i {
 
 .right-side .header {
     border-left: .0625rem solid lightgray;
-    padding: .3125rem;
+    padding: .625rem;
 }
 
 .header {
@@ -159,7 +159,7 @@ ul.contacts li {
 }
 
 ul.contacts {
-    overflow-y:auto;
+    overflow-y: auto;
 }
 
 ul.contacts li {
@@ -170,8 +170,8 @@ aside {
     height: calc(100% - 3.75rem);
 }
 
-.bottom-bar {
-    padding: .625rem;
+.bottom-bar > *{
+    padding: .3125rem;
 }
 
 .bottom-bar {
@@ -186,24 +186,22 @@ aside {
     overflow-y: scroll;
 }
 
-.message-rec {
+.message {
     position: relative;
-    background-color: #d6f8bc;
     padding: 1rem;
     margin: 1.25rem;
-    align-self: flex-end;
     width: 50%;
     border-radius: .625rem;
 }
 
+.message-rec {
+    background-color: #d6f8bc;
+    align-self: flex-end;
+}
+
 .message-send {
-    position: relative;
     background-color: white;
-    padding: 1rem;
-    margin: 1.25rem;
     align-self: flex-start;
-    width: 50%;
-    border-radius: .625rem;
 }
 
 .bottom-bar input {
@@ -220,8 +218,8 @@ aside {
     font-size: .625rem;
     color: gray;
     position: absolute;
-    right: .1875rem;
-    bottom: .1875rem;
+    right: .3125rem;
+    bottom: .3125rem;
 }
 
 /* || Utils */
