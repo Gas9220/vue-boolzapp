@@ -206,8 +206,8 @@ createApp({
         },
         filteredContacts() {
             let filteredArray = this.checkExistingUser()
-            if (this.searchText !== '') {   
-            this.selectedUser = 0
+            if (this.searchText !== '') {
+                this.selectedUser = 0
                 return filteredArray;
             } else {
                 return this.contacts;
@@ -238,27 +238,44 @@ createApp({
                 }
                 filtered.push(exampleUser)
             }
-                return filtered
+            return filtered
         },
         getMessageTime(date) {
             var DateTime = luxon.DateTime;
 
             const formattedDate = DateTime.fromFormat(date, 'dd/mm/yyyy hh:mm:ss')
-            
+
             const hours = formattedDate.hour
             const minutes = formattedDate.minute
-        
+
             return `${hours}:${minutes}`
             //return formattedDate.toLocaleString(DateTime.TIME_SIMPLE) NON FUNZIONA
         },
         checkLastMessage(messages) {
-            const lastMessage = messages[messages.length - 1]
-            console.log(lastMessage)
-            if (lastMessage.status === 'received') {
-                return `Ultimo messaggio ricevuto ${this.getMessageTime(lastMessage.date)}`
-            } 
+            if (messages.length !== 0) {
+                const lastMessage = messages[messages.length - 1]
+                console.log(lastMessage)
+                if (lastMessage.status === 'received') {
+                    return `Ultimo messaggio ricevuto ${this.getMessageTime(lastMessage.date)}`
+                }
+                return `Ultimo messaggio inviato ${this.getMessageTime(lastMessage.date)}`
+            }
+            return 'Nessun messaggio inviato / ricevuto'
+        },
+        deleteMessage(index, event) {
+            console.log(event.target.parentElement)
+            event.target.parentElement.classList.remove('visible')
+            this.filteredContacts()[this.selectedUser].messages.splice(index, 1);
+        },
+        emptyConversation(messages) {
+            if (messages.length === 0) {
+                return true
+            }
 
-            return `Ultimo messaggio inviato ${this.getMessageTime(lastMessage.date)}`
+            return false
+        },
+        showMessageOptions(event) {
+            event.target.nextElementSibling.classList.toggle('visible')
         }
     }
 }).mount('#app')

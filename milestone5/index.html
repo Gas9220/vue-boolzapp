@@ -84,9 +84,18 @@
                     </div>
                 </div>
                 <div class="messages-area d-flex flex-col f-grow1">
-                    <div class="message" :class="isMessageReceived(index)" v-for="(messageInfo, index) in filteredContacts()[selectedUser].messages">
+                    <div v-if="!emptyConversation(filteredContacts()[selectedUser].messages)" class="message" :class="isMessageReceived(index)" v-for="(messageInfo, index) in filteredContacts()[selectedUser].messages">
                         {{ messageInfo.message }}
                         <small class="time"> {{ getMessageTime(messageInfo.date) }} </small>
+                        <div class="dropdown">
+                            <i class="fa-solid fa-chevron-down" @click="showMessageOptions($event)"></i>
+                            <div class="dropdown-content">
+                              <span @click="deleteMessage(index, $event)">Delete message</span>
+                            </div>
+                          </div>
+                    </div>
+                    <div v-else>
+                        <h3 class="no-messages">Nessun messaggio scambiato</h3>
                     </div>
                 </div>
                 <div class="bottom-bar d-flex">
