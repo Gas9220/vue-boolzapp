@@ -221,7 +221,7 @@ createApp({
         // Metodo che permette di cancellare un messaggio
         deleteMessage(index, event) {
             // Rimuovo la classe visiible al parent dell'elemento che al click ha scatenato l'evento
-            event.target.parentElement.classList.remove('visible')
+            this.hideMessageOptions()
             // Rimuovo il messaggio
             this.selectedUser.messages.splice(index, 1);
         },
@@ -238,6 +238,9 @@ createApp({
         // Metodo che aggiunge la classe 'visible' all'elemento HTML successivo che ha scatenato l'evento
         showMessageOptions(event) {
             event.target.nextElementSibling.classList.toggle('visible')
+        },
+        hideMessageOptions() {
+            document.querySelector('.visible').classList.remove('visible');
         },
         // Contatti -------------------------
         // Medoto che permette di ricercare i contatti
