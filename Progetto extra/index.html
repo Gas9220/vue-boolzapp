@@ -73,7 +73,7 @@
                         <img v-if="selectedUser !== null" :src="selectedUser.avatar" alt="avatar" class="circle-img">
                         <div>
                             <div v-if="selectedUser !== null">{{ selectedUser.name }}</div>
-                            <span v-if="selectedUser !== null" class="last-access">Ultimo accesso oggi alle 12:00</span>
+                            <span v-if="selectedUser !== null" class="last-access">{{ lastAccess(selectedUser) }}</span>
                         </div>
                     </div>
 

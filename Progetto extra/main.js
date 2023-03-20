@@ -307,6 +307,22 @@ createApp({
             }
             // altrimenti ritorno questa stringa
             return '--:--'
+        },
+        // Metodo che calcola l'ultimo accesso di un utente
+        lastAccess(contact) {
+            //Se non la chat con il contatto è vuota, genero una data random e la uso come ultimo accesso
+            if (contact.messages.length === 0) {
+                const randomDate = this.randomDate(new Date(2020, 0, 1), new Date())
+                return `Ultima volta online: ${randomDate.toLocaleString()}`
+            } else {
+            // Se la chat con il contatto non è vuota, mi prendo l'ultimo messaggio e uso la data come ultimo accesso
+                const lastMessage = contact.messages[contact.messages.length - 1].date
+                return `Ultima volta online: ${lastMessage}`
+            }
+        },
+        // Funzione che genera una data random tra due date
+        randomDate(start, end) {
+            return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
         }
     }
 }).mount('#app')
