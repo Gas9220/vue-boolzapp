@@ -182,25 +182,26 @@ createApp({
             this.selectedUser = contact
         },
         sendNewMessage() {
+            const conversation = this.selectedUser.messages
 
             const newMessage = {
                 date: "17/03/2023 18:15:15",
                 message: this.messageText,
                 status: 'sent'
             }
-            this.selectedUser.messages.push(newMessage)
+            conversation.push(newMessage)
             this.messageText = ''
 
-            this.automaticAnswer()
+            this.automaticAnswer(conversation)
         },
-        automaticAnswer() {
-            setTimeout((conversation) => {
+        automaticAnswer(conversation) {
+            setTimeout(() => {
                 const newMessage = {
                     date: "17/03/2023 18:15:17",
                     message: 'Ti ho risposto dopo 3 secondi',
                     status: 'received'
                 }
-                this.selectedUser.messages.push(newMessage)
+                conversation.push(newMessage)
             }, 3 * 1000);
         },
         filteredContacts() {
