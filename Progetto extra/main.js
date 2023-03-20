@@ -172,37 +172,72 @@ createApp({
         }
     },
     methods: {
-        isMessageReceived(index) {
-            if (this.selectedUser.messages[index].status === 'received') {
-                return 'message-rec'
-            }
-            return 'message-send'
-        },
+        // MESSAGGI ------------------------
+        // Metodo che permette di recuperare i messaggi scambiati con un determinato contatto
         getContactMessages(contact) {
             this.selectedUser = contact
         },
+        // Metodo che determina se il messaggio è stato ricevuto o inviato e assegna la classe CSS corrispondente
+        isMessageReceived(index) {
+            // Se il messaggio ha come status 'received' inmposto la classe corrispondente
+            if (this.selectedUser.messages[index].status === 'received') {
+                return 'message-rec'
+            }
+            // Altrimenti inposto la classe per i messaggi inviati
+            return 'message-send'
+        },
+        // Metodo che permette di inviare messaggi
         sendNewMessage() {
+            // Conservo la conversazione attuale in una constante
             const conversation = this.selectedUser.messages
 
+            // Creo un nuovo messaggio
             const newMessage = {
                 date: "17/03/2023 18:15:15",
                 message: this.messageText,
                 status: 'sent'
             }
+            // Aggiungo il messaggio alla conversazione
             conversation.push(newMessage)
+            // Svuoto il campo di testo
             this.messageText = ''
-
+            // Richiamo la risposta automatica
             this.automaticAnswer(conversation)
         },
+        // Metodo che invia una risposta automatica dopo l'invio di un messaggio
         automaticAnswer(conversation) {
+            // Creo un timeout di 3 secondi
             setTimeout(() => {
+                // Creo un nuovo messaggio
                 const newMessage = {
                     date: "17/03/2023 18:15:17",
                     message: 'Ti ho risposto dopo 3 secondi',
                     status: 'received'
                 }
+                // Lo appendo alla conversazione passata come argomento
                 conversation.push(newMessage)
             }, 3 * 1000);
+        },
+        // Metodo che permette di cancellare un messaggio
+        deleteMessage(index, event) {
+            // Rimuovo la classe visiible al parent dell'elemento che al click ha scatenato l'evento
+            event.target.parentElement.classList.remove('visible')
+            // Rimuovo il messaggio
+            this.selectedUser.messages.splice(index, 1);
+        },
+        // Metodo che permette di controllare se una conversazione è vuota
+        isConversationEmpty(messages) {
+            // Controllo la lunghezza dell'array che contiene i messaggi
+            if (messages.length === 0) {
+                // Se è vuoto ritorno true
+                return true
+            }
+            // Se ci sono elementi ritorno false
+            return false
+        },
+        // Metodo che aggiunge la classe 'visible' all'elemento HTML successivo che ha scatenato l'evento
+        showMessageOptions(event) {
+            event.target.nextElementSibling.classList.toggle('visible')
         },
         filteredContacts() {
             let filteredArray = this.checkExistingUser()
@@ -260,21 +295,6 @@ createApp({
                 return `Ultimo messaggio inviato ${this.getMessageTime(lastMessage.date)}`
             }
             return 'Nessun messaggio inviato / ricevuto'
-        },
-        deleteMessage(index, event) {
-            console.log(event.target.parentElement)
-            event.target.parentElement.classList.remove('visible')
-            this.selectedUser.messages.splice(index, 1);
-        },
-        emptyConversation(messages) {
-            if (messages.length === 0) {
-                return true
-            }
-
-            return false
-        },
-        showMessageOptions(event) {
-            event.target.nextElementSibling.classList.toggle('visible')
         }
     }
 }).mount('#app')

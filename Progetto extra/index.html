@@ -84,7 +84,7 @@
                     </div>
                 </div>
                 <div class="messages-area d-flex flex-col f-grow1">
-                    <div v-if="(selectedUser !== null) && (selectedUser.messages.length > 0)" class="message" :class="isMessageReceived(index)"  v-for="(messageInfo, index) in selectedUser.messages">
+                    <div v-if="(selectedUser !== null) && (!isConversationEmpty(selectedUser.messages))" class="message" :class="isMessageReceived(index)"  v-for="(messageInfo, index) in selectedUser.messages">
                         {{ messageInfo.message }}
                         <small class="time"> {{ getMessageTime(messageInfo.date) }} </small>
                         <div class="dropdown">
