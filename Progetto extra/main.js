@@ -294,8 +294,8 @@ createApp({
             // Creo la data
             const formattedDate = DateTime.fromFormat(date, 'dd/mm/yyyy hh:mm:ss')
             // Mi prendo i componenti ora e minuti
-            const hours = formattedDate.hour
-            const minutes = formattedDate.minute
+            const hours = String(formattedDate.hour).padStart(2, "0")
+            const minutes = String(formattedDate.minute).padStart(2, "0")
 
             return `${hours}:${minutes}`
         },
