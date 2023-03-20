@@ -1,0 +1,49 @@
+.messages-area {
+    background-image: url('../img/mine.jpg'); 
+    width: 100%;
+    overflow-y: auto;
+}
+
+.message {
+    position: relative;
+    padding: 1rem;
+    margin: 1.25rem;
+    width: 50%;
+    border-radius: .625rem;
+}
+
+.message i {
+    position: absolute;
+    display: none;
+    right: .625rem;
+    top: .3125rem;
+    color: gray;
+    font-size: .8125rem;
+}
+
+.no-messages {
+    text-align: center;
+    margin-top: 50%;
+}
+
+.message:hover i {
+    display: initial;
+}
+
+.message-send {
+    background-color: #d6f8bc;
+    align-self: flex-end;
+}
+
+.message-rec {
+    background-color: white;
+    align-self: flex-start;
+}
+
+.time {
+    font-size: .625rem;
+    color: gray;
+    position: absolute;
+    right: .3125rem;
+    bottom: .3125rem;
+}

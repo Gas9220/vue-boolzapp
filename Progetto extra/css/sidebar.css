@@ -1,0 +1,72 @@
+aside {
+    height: calc(100% - 3.75rem);
+}
+
+.notifications {
+    padding: .3125rem;
+    background-color: lightblue;
+    height: 4.0625rem;
+}
+
+.notifications i {
+    color: lightblue;
+    background-color: white;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    vertical-align: middle;
+    margin-right: .3rem;
+    padding: .5rem;
+}
+
+.notifications div small {
+    display: block;
+}
+
+.notifications div a {
+    color: gray;
+}
+
+.search {
+    background-color: lightgray;
+}
+
+.search input {
+    margin-top: .625rem;
+    margin-bottom: .625rem;
+    background-color: white;
+    border: none;
+    height: 1.875rem;
+}
+
+.search div {
+    margin-right: 4px;
+    margin-left: .25rem;
+}
+
+.search i {
+    color: gray;
+    background-color: white;
+    height: 1.875rem;
+    padding: .3125rem;
+}
+
+ul.contacts li {
+    padding: .7rem .3125rem;
+    background-color: white;
+}
+
+ul.contacts {
+    overflow-y: auto;
+}
+
+ul.contacts li {
+    cursor: pointer;
+}
+
+.last-message {
+    margin-left: auto;
+}
+
+.selected {
+    background-color: lightgray !important;
+}

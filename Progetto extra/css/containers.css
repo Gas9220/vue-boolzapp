@@ -1,0 +1,45 @@
+/* || Main container */
+.container {
+    position: absolute;
+    width: 70%;
+    max-width: 68.75rem;
+    height: 80%;
+    top: 50%;
+    left: 50%;
+    border-radius: 1rem;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.left-side {
+    width: 50%;
+    background-color: white;
+}
+
+.right-side .header {
+    border-left: .0625rem solid lightgray;
+    padding: .625rem;
+}
+
+.header {
+    height: 3.75rem;
+    justify-content: space-between;
+    background-color: lightgray;
+}
+
+.header i {
+    color: gray;
+    padding: .4rem;
+}
+
+.header i:last-child {
+    margin-right: .3125rem;
+}
+
+.last-access {
+    font-size: .625rem;
+    color: gray;
+}
+
+.header div img.circle-img {
+    margin: 0 .4375rem 0 .4375rem;
+}

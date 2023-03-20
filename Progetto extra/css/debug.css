@@ -1,0 +1,20 @@
+/* || Debug */
+.debug .container {
+    background-color: rebeccapurple;
+}
+
+.debug .left-side {
+    background-color: lightblue;
+}
+
+.debug .right-side {
+    background-color: lightcoral;
+}
+
+.debug .header {
+    background-color: lightpink;
+}
+
+.debug .bottom-bar {
+    background-color: lightyellow;
+}

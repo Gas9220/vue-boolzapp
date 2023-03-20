@@ -1,0 +1,17 @@
+.bottom-bar > * {
+    padding: .3125rem;
+}
+
+.bottom-bar {
+    padding: .625rem;
+    background-color: rgb(211, 202, 192);
+}
+
+.bottom-bar input {
+    margin-left: 10px;
+    margin-right: .625rem;
+}
+
+.bottom-bar i {
+    color: gray;
+}

@@ -1,0 +1,42 @@
+@import url('utils.css');
+@import url('containers.css');
+@import url('messages.css');
+@import url('dropdown.css');
+@import url('bottom-bar.css');
+@import url('sidebar.css');
+@import url('debug.css');
+
+/* || Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* || Variables */
+
+:root {
+    --backgroundColor1: #009688;
+    --backgroundColor2: #dadbd4;
+}
+
+/* || General styles */
+
+body {
+    background: linear-gradient(to bottom, var(--backgroundColor1) 20%, var(--backgroundColor2) 15%);
+    height: 100vh;
+}
+
+ul {
+    list-style: none;
+}
+
+i {
+    cursor: pointer;
+}
+
+@media screen and (min-width: 800px) {
+    .left-side {
+        width: 40%;
+    }
+}
