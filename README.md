@@ -39,3 +39,6 @@ Esercitazione corso [Boolean](https://boolean.careers/) che consiste nel ricrear
 
 **Client:** HTML - CSS - Javascript - Vuejs - [Luxon](https://moment.github.io/luxon/#/)
 
+## What's next?
+- Migliorare la gestione e visualizzazione delle date
+
