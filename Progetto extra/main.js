@@ -239,14 +239,36 @@ createApp({
         showMessageOptions(event) {
             event.target.nextElementSibling.classList.toggle('visible')
         },
+        // Contatti -------------------------
+        // Medoto che permette di ricercare i contatti
         filteredContacts() {
                 this.contacts.forEach((contact) => {
+                    // Se i caratteri inseriti nella ricerca non contengono un nome presente dei contatti
                     if (!contact.name.toLowerCase().includes(this.searchText.toLowerCase())) {
+                        // Imposto la visibilità su false
                         contact.visible = false
                     } else {
+                        // Altrimenti la imposto su true
                         contact.visible = true
                     }
                 })
+        },
+        // Funzione che permette di recuperare l'ultimo messaggio inviato/ricevuto (se esiste) e mostrarlo nella lista
+        checkLastMessage(messages) {
+            // Controllo se sono stati scambiati messaggi
+            if (messages.length !== 0) {
+                // Recupero l'ultimo messaggio
+                const lastMessage = messages[messages.length - 1]
+                // se il messaggio è stato ricevuto
+                if (lastMessage.status === 'received') {
+                    //... Ritorno un messaggio adeguato
+                    return `Messaggio ricevuto: ${lastMessage.message}`
+                }
+                // se il messaggio è stato inviato
+                return `Messaggio inviato: ${lastMessage.message}`
+            }
+            // se non sono stati scambiati messaggi
+            return 'Nessun messaggio inviato / ricevuto'
         },
         getMessageTime(date) {
             var DateTime = luxon.DateTime;
@@ -258,16 +280,6 @@ createApp({
 
             return `${hours}:${minutes}`
             //return formattedDate.toLocaleString(DateTime.TIME_SIMPLE) NON FUNZIONA
-        },
-        checkLastMessage(messages) {
-            if (messages.length !== 0) {
-                const lastMessage = messages[messages.length - 1]
-                if (lastMessage.status === 'received') {
-                    return `Ultimo messaggio ricevuto ${this.getMessageTime(lastMessage.date)}`
-                }
-                return `Ultimo messaggio inviato ${this.getMessageTime(lastMessage.date)}`
-            }
-            return 'Nessun messaggio inviato / ricevuto'
         }
     }
 }).mount('#app')
