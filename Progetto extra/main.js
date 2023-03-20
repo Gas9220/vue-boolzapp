@@ -3,7 +3,7 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
-            selectedUser: 0,
+            selectedUser: null,
             messageText: '',
             contacts: [
                 {
@@ -173,41 +173,39 @@ createApp({
     },
     methods: {
         isMessageReceived(index) {
-            if (this.filteredContacts()[this.selectedUser].messages[index].status === 'received') {
+            if (this.selectedUser.messages[index].status === 'received') {
                 return 'message-rec'
             }
             return 'message-send'
         },
-        getContactMessages(index) {
-            this.selectedUser = index
+        getContactMessages(contact) {
+            this.selectedUser = contact
         },
         sendNewMessage() {
-            var DateTime = luxon.DateTime;
 
             const newMessage = {
                 date: "17/03/2023 18:15:15",
                 message: this.messageText,
                 status: 'sent'
             }
-            this.filteredContacts()[this.selectedUser].messages.push(newMessage)
+            this.selectedUser.messages.push(newMessage)
             this.messageText = ''
 
             this.automaticAnswer()
         },
         automaticAnswer() {
-            setTimeout(() => {
+            setTimeout((conversation) => {
                 const newMessage = {
                     date: "17/03/2023 18:15:17",
                     message: 'Ti ho risposto dopo 3 secondi',
                     status: 'received'
                 }
-                this.filteredContacts()[this.selectedUser].messages.push(newMessage)
+                this.selectedUser.messages.push(newMessage)
             }, 3 * 1000);
         },
         filteredContacts() {
             let filteredArray = this.checkExistingUser()
             if (this.searchText !== '') {
-                this.selectedUser = 0
                 return filteredArray;
             } else {
                 return this.contacts;
@@ -265,7 +263,7 @@ createApp({
         deleteMessage(index, event) {
             console.log(event.target.parentElement)
             event.target.parentElement.classList.remove('visible')
-            this.filteredContacts()[this.selectedUser].messages.splice(index, 1);
+            this.selectedUser.messages.splice(index, 1);
         },
         emptyConversation(messages) {
             if (messages.length === 0) {
