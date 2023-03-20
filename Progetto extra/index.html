@@ -58,7 +58,7 @@
                                     <div>{{ contact.name }}</div>
                                     <small>{{ checkLastMessage(contact.messages) }}</small>
                                 </div>
-                                <small class="last-message">12:00</small>
+                                <small class="last-message">{{ lastMessageTime(contact.messages) }}</small>
                             </div>
                         </li>
                     </ul>
@@ -115,6 +115,7 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/luxon@3.3.0/build/global/luxon.min.js"></script>
     <script src="main.js"></script>
+    <script src="../test.js"></script>
     <!-- /Script -->
 
 </body>

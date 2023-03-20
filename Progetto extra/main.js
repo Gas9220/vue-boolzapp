@@ -193,7 +193,7 @@ createApp({
 
             // Creo un nuovo messaggio
             const newMessage = {
-                date: "17/03/2023 18:15:15",
+                date: this.addDateToMessage(),
                 message: this.messageText,
                 status: 'sent'
             }
@@ -210,7 +210,7 @@ createApp({
             setTimeout(() => {
                 // Creo un nuovo messaggio
                 const newMessage = {
-                    date: "17/03/2023 18:15:17",
+                    date: this.addDateToMessage(),
                     message: 'Ti ho risposto dopo 3 secondi',
                     status: 'received'
                 }
@@ -242,16 +242,16 @@ createApp({
         // Contatti -------------------------
         // Medoto che permette di ricercare i contatti
         filteredContacts() {
-                this.contacts.forEach((contact) => {
-                    // Se i caratteri inseriti nella ricerca non contengono un nome presente dei contatti
-                    if (!contact.name.toLowerCase().includes(this.searchText.toLowerCase())) {
-                        // Imposto la visibilità su false
-                        contact.visible = false
-                    } else {
-                        // Altrimenti la imposto su true
-                        contact.visible = true
-                    }
-                })
+            this.contacts.forEach((contact) => {
+                // Se i caratteri inseriti nella ricerca non contengono un nome presente dei contatti
+                if (!contact.name.toLowerCase().includes(this.searchText.toLowerCase())) {
+                    // Imposto la visibilità su false
+                    contact.visible = false
+                } else {
+                    // Altrimenti la imposto su true
+                    contact.visible = true
+                }
+            })
         },
         // Funzione che permette di recuperare l'ultimo messaggio inviato/ricevuto (se esiste) e mostrarlo nella lista
         checkLastMessage(messages) {
@@ -270,16 +270,43 @@ createApp({
             // se non sono stati scambiati messaggi
             return 'Nessun messaggio inviato / ricevuto'
         },
+        // Metodo che salva la data di invio/ricezione messaggio nello stesso formato presente nel database
+        addDateToMessage() {
+            let DateTime = luxon.DateTime
+            // Creo una nuova data
+            const newDate = DateTime.now().setZone('Europe/Rome')
+
+            // Mi prendo tutti i componenti della data, assicurandomi che siano sempre a due cifre
+            const year = String(newDate.year)
+            const month = String(newDate.month).padStart(2, "0")
+            const day = String(newDate.day).padStart(2, "0")
+            const hours = String(newDate.hour).padStart(2, "0")
+            const minutes = String(newDate.minute).padStart(2, "0")
+            const seconds = String(newDate.second).padStart(2, "0")
+
+            // Ritorno la stringa formattata come da database
+            return `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`
+        },
+        // Metodo ricava l'ora e i minuti da una data
         getMessageTime(date) {
-            var DateTime = luxon.DateTime;
+            let DateTime = luxon.DateTime;
 
+            // Creo la data
             const formattedDate = DateTime.fromFormat(date, 'dd/mm/yyyy hh:mm:ss')
-
+            // Mi prendo i componenti ora e minuti
             const hours = formattedDate.hour
             const minutes = formattedDate.minute
 
             return `${hours}:${minutes}`
-            //return formattedDate.toLocaleString(DateTime.TIME_SIMPLE) NON FUNZIONA
+        },
+        lastMessageTime(messages) {
+            // Controllo se sono stati scambiati messaggi
+            if (messages.length !== 0) {
+                // se ci sono messaggi mi ricavo l'ora e i minuti dall'ultimo
+                return this.getMessageTime(messages[messages.length - 1].date)
+            }
+            // altrimenti ritorno questa stringa
+            return '--:--'
         }
     }
 }).mount('#app')
