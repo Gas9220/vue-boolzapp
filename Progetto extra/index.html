@@ -51,7 +51,7 @@
                         </div>
                     </div>
                     <ul class="contacts">
-                        <li v-for="(contact, index) in filteredContacts()" @click="getContactMessages(contact)" :class="{ selected: contact === selectedUser }">
+                        <li v-for="(contact, index) in contacts" v-show="contact.visible" @click="getContactMessages(contact)" :class="{ selected: contact === selectedUser }">
                             <div class="d-flex">
                                 <img :src="contact.avatar" alt="avatar" class="circle-img">
                                 <div>

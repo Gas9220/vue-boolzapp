@@ -240,39 +240,13 @@ createApp({
             event.target.nextElementSibling.classList.toggle('visible')
         },
         filteredContacts() {
-            let filteredArray = this.checkExistingUser()
-            if (this.searchText !== '') {
-                return filteredArray;
-            } else {
-                return this.contacts;
-            }
-        },
-        checkExistingUser() {
-            let filtered = this.contacts.filter((contact) => {
-                return contact.name.toLowerCase().includes(this.searchText.toLowerCase())
-            });
-
-            if (filtered.length === 0) {
-                const exampleUser = {
-                    name: 'Utente esempio',
-                    avatar: 'img/avatar_1.jpg',
-                    visible: true,
-                    messages: [
-                        {
-                            date: '10/01/2020 15:51:15',
-                            message: 'Questo è un messaggio inviato di prova',
-                            status: 'sent'
-                        },
-                        {
-                            date: '10/01/2020 15:51:15',
-                            message: 'Questo è un messaggio ricevuto di prova',
-                            status: 'received'
-                        }
-                    ]
-                }
-                filtered.push(exampleUser)
-            }
-            return filtered
+                this.contacts.forEach((contact) => {
+                    if (!contact.name.toLowerCase().includes(this.searchText.toLowerCase())) {
+                        contact.visible = false
+                    } else {
+                        contact.visible = true
+                    }
+                })
         },
         getMessageTime(date) {
             var DateTime = luxon.DateTime;
@@ -288,7 +262,6 @@ createApp({
         checkLastMessage(messages) {
             if (messages.length !== 0) {
                 const lastMessage = messages[messages.length - 1]
-                console.log(lastMessage)
                 if (lastMessage.status === 'received') {
                     return `Ultimo messaggio ricevuto ${this.getMessageTime(lastMessage.date)}`
                 }
